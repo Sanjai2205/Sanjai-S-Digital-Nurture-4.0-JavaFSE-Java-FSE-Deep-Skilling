@@ -1,0 +1,34 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Database Connection Settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/employee_db</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">Sanjai@22</property>
+
+        <!-- JDBC Connection Pool (Not for production) -->
+        <property name="hibernate.connection.pool_size">5</property>
+
+        <!-- SQL Dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Automatic Schema Generation -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Show SQL in Console -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Optional: Disable deprecated table options like type=MyISAM -->
+        <property name="hibernate.use_new_id_generator_mappings">true</property>
+
+        <!-- Annotated Entity -->
+        <mapping class="com.example.Employee"/>
+
+    </session-factory>
+</hibernate-configuration>
